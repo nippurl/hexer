@@ -26,3 +26,5 @@ services:
     App\Util\HexerApiInterface:
         class: App\Util\HexerApiService
    # the class to instantiate to create a bundle\Mailer
+imports:
+   - { resource: '../src/Config/jme.yaml' }

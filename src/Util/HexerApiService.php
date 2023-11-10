@@ -4,8 +4,20 @@ namespace App\Util;
 
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+/**
+ * En todas las consultas
+ * @author
+ * @return array
+ *              'resultado' => 'ok' si es ok, ERROR si hay un error
+ *              'error'=> Mensaje de error,
+ *              'vehiculo' => Como quedo el objeto creado o modificado
+ */
 class HexerApiService implements HexerApiInterface
 {
+		public const VehiculoTipo = [
+			'Auto' => 'a',
+			'Moto' => 'm',
+		];
 		private const URL = 'http://127.0.0.1:8000';
 		
 		public function __construct(
@@ -138,12 +150,26 @@ class HexerApiService implements HexerApiInterface
 		 * @param $data
 		 * @return void
 		 */
-		private function error($data) :array
+		private function error($data): array
 		{
 				$respuesta              = [];
 				$respuesta['resultado'] = 'ERROR';
 				$respuesta['error']     = $data['error'];
 				return $respuesta;
 		}
-	
+		
+		public function verificar($data): array
+		{
+				$errores  = [];
+				$url      = self::URL.'/verificar';
+				$response = $this->client->request('GET', $url, [
+					'json' => $data,
+				]);
+				if ($response->getStatusCode() === 200) {
+						$data = $response->toArray();
+						return $data;
+				} else {
+						return $this->error($response->getContent());
+				}
+		}
 }

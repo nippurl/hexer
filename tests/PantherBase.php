@@ -11,7 +11,7 @@ use Symfony\Component\Panther\PantherTestCase;
 
 abstract class PantherBase extends PantherTestCase
 {
-		use RecreateDatabaseTrait;
+	//	use RecreateDatabaseTrait;
 		
 		const PATH = './var/errors/';
 		protected static ?Client $client = null;
@@ -25,6 +25,8 @@ abstract class PantherBase extends PantherTestCase
 				parent::setUp();
 				$this->takeScreenshotIfTestFailed();
 				self::Client();
+				$this->cleanDB();
+				$this->cleanCache();
 				
 		}
 				static protected function Client():Client{
@@ -35,8 +37,10 @@ abstract class PantherBase extends PantherTestCase
 								self::$client = Client::createFirefoxClient(
 									__DIR__.'/../geckodriver',
 									[],
-									[],
-									'http://jme:treeww@hagel.localhost/test.php',
+									[
+										'followRedirects'=> false,
+									],
+									'http://hexer.localhost/hexer/public/index.php',
 								);
 							}
 						return self::$client;
@@ -92,5 +96,21 @@ abstract class PantherBase extends PantherTestCase
 		{
 				self::$client->quit();
 				parent::tearDown();
+		}
+		
+		/**
+		 * Limpia la base de datos del otro proyecto hexerAPI
+		 * @return void
+		 */
+		private function cleanDB()
+		{
+				$cmd    = 'php /home/www/hexerAPI/bin/console h:f:l  --env=dev -n  --purge-with-truncate'; # --env=test';
+				$output = shell_exec($cmd);
+		}
+		
+		private function cleanCache()
+		{
+				$cmd    = 'sudo rm -rf /home/www/hexer/var/cache/* &'; # --env=test';
+				$output = shell_exec($cmd);
 		}
 }

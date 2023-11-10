@@ -1,12 +1,10 @@
-
 twig:
-    default_path: '%kernel.project_dir%/templates'
     paths: ['%kernel.project_dir%/templates']
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'bootstrap_4_horizontal_layout.html.twig'
-        # - bootstrap_3_horizontal_layout.html.twig
+       # - bootstrap_3_horizontal_layout.html.twig
     date:
         format: "d-m-y"
         #detailed_format: "d-m-Y H:i:s"
@@ -18,9 +16,3 @@ twig:
         decimals: 2
         decimal_point: ','
         thousands_separator: '.'
-when@test:
-    twig:
-        strict_variables: true
-
-#imports:
-#    - { resource: '%kernel.project_dir%/src/Config/twig.yaml' }

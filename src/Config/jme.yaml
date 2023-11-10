@@ -1,0 +1,12 @@
+#
+# agregar esto en service.yaml AL FINAL!!!!!!
+# imports:
+#    - { resource: '@JmeBaseBundle/config/jme.yaml' }
+#
+#
+framework:
+    ide: "editor://%%f#%%l"
+    translator: { fallbacks: [es] }
+    default_locale: es
+    csrf_protection: false
+    #http_method_override: true

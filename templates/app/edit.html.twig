@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{# @var \App\form\VehiculoType $form #}
+{% block title %}Editar Vehiculo {{ vehiculo.marca }}{% endblock %}
+
+{% block body %}
+    <h1>Editar Vehiculo {{ vehiculo.marca }}</h1>
+    {{ form(form) }}
+{% endblock %}

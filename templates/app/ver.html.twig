@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{# @var \App\Entity\Vehiculo $vehiculo #}
+{% block title %}Vehiculo {{ vehiculo.marca }}{% endblock %}
+
+{% block body %}
+    <h1>{{ vehiculo.marca }} ({{ vehiculo.matricula }})</h1>
+    <table class="table" id="vehiculo_{{ vehiculo.id }}">
+        <tr>
+            <th>Marca</th>
+            <td>{{ vehiculo.marca }}</td>
+        </tr>
+        <tr>
+            <th>Modelo</th>
+            <td>{{ vehiculo.modelo }}</td>
+        </tr>
+        <tr>
+            <th>Color</th>
+            <td>{{ vehiculo.color }}</td>
+        </tr>
+        <tr>
+            <th>Matricula</th>
+            <td>{{ vehiculo.matricula }}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <a href="{{ path('app_edit', { 'id': vehiculo['id'] }) }}" id="edit_{{ vehiculo['id'] }}"
+                   class="edit">Editar</a>
+                <a href="{{ path('rematricular', { 'id': vehiculo['id'] }) }}" class="btn btn-secondary">Re-Matricular</a>
+                <a href="">Vender</a>
+                <a href="{{ path('app_index', {  }) }}" class="exit">Volver</a>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
