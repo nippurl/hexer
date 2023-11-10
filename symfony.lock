@@ -1,4 +1,18 @@
 {
+    "api-platform/core": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.2",
+            "ref": "696d44adc3c0d4f5d25a2f1c4f3700dd8a5c6db9"
+        },
+        "files": [
+            "config/packages/api_platform.yaml",
+            "config/routes/api_platform.yaml",
+            "src/ApiResource/.gitignore"
+        ]
+    },
     "doctrine/doctrine-bundle": {
         "version": "2.10",
         "recipe": {
@@ -151,6 +165,15 @@
         "files": [
             "config/packages/notifier.yaml"
         ]
+    },
+    "symfony/panther": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "292a3236e81f55b545b09b9954ab097248972ab3"
+        }
     },
     "symfony/phpunit-bridge": {
         "version": "6.3",
