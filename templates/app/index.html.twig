@@ -3,7 +3,7 @@
 {% block title %}Bienvenido{% endblock %}
 
 {% block body %}
-    <h1> {{ 'Bienvenido'|trans }}</h1>
+    <h1 id="bienvenido"> {{ 'Bienvenido'|trans }}</h1>
     <a href="{{ path('app_nuevo', {  }) }}" class="new float-right">Nuevo Vehiculo</a>
 
     <form action="#">
@@ -36,8 +36,10 @@
                        id="ver_{{ vehiculo['id'] }}">Ver</a>
                     <a href="{{ path('app_edit', { 'id': vehiculo['id'] }) }}" id="edit_{{ vehiculo['id'] }}"
                        class="edit">Editar</a>
-                    <a href="{{ path('rematricular', { 'id': vehiculo['id'] }) }}" class="btn btn-secondary">Rematricular</a>
-                    <a href="">Vender</a>
+                    <a href="{{ path('app_rematricular', { 'id': vehiculo['id'] }) }}" class="btn btn-secondary"
+                       id="rematricular_{{ vehiculo['id'] }}">Rematricular</a>
+                    <a href="{{ path('app_vender', { 'id': vehiculo['id'] }) }}" id="vender_{{ vehiculo['id'] }}"
+                    class="btn btn-danger" onclick="return confirm('¿Desea vender este vehiculo?');">Vender</a>
                 </td>
             </tr>
         {% endfor %}

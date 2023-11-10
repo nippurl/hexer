@@ -86,17 +86,27 @@ class AppController extends AbstractController
 				}
 				return $this->render('app/edit.html.twig', [
 						'form' => $form->createView(),
-							'vehiculo' => $vehiculo,
+						'vehiculo' => $vehiculo,
 					]
 				);
 		}
-		#[Route(path: '/rematricular/{id}', name: 'app_rematricular', methods: ['GET'])]
-		public function rematricular($id, HexerApiInterface $hexerApiService){
+		
+		#[Route(path: '/{id}/rematricular/', name: 'app_rematricular', methods: ['GET'])]
+		public function rematricular($id, HexerApiInterface $hexerApiService)
+		{
 				$hexerApiService->rematricular($id);
-				return $this->redirectToRoute('app_show', [
+				return $this->redirectToRoute('app_ver', [
 					'id' => $id,
 				]);
 		}
 		
-				//todo vender
+		
+		#[Route(path: '/{id}/vender/', name: 'app_vender', methods: ['GET'])]
+		public function vender($id, HexerApiInterface $hexerApiService)
+		{
+				$hexerApiService->vender($id);
+				return $this->redirectToRoute('app_ver', [
+					'id' => $id,
+				]);
 		}
+}

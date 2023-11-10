@@ -36,8 +36,9 @@ abstract class PantherBase extends PantherTestCase
 						if (!self::$client) {
 								self::$client = Client::createFirefoxClient(
 									__DIR__.'/../geckodriver',
-									[],
+									null,
 									[
+										
 										'followRedirects'=> false,
 									],
 									'http://hexer.localhost/hexer/public/index.php',

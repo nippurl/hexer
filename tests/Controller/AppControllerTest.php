@@ -137,11 +137,70 @@ class AppControllerTest extends PantherBase
 				
 		}
 		
-		public function testRemattricularAuto ():void{
-		 return ;
+		/**
+		 * Debe abrir y al auto 3 y rematricularlo y termina show con la nueva matricula
+		 * @return void
+		 */
+		public function testRematricularAuto ():void{
+				$client = $this->Client();
+				$crawler = $client->request('GET', '/');
+				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
+				//elegir el auto id 3
+				$a = $crawler->filter('#rematricular_3');
+				/** @var \Facebook\WebDriver\Remote\RemoteWebElement $Remote */
+				$a->click();
+				$crawler = $client->waitFor('table#vehiculo_3');
+				$matricula  =  $crawler->filter('td#matricula')->text();
+				Assert::assertNotEquals('AA1234', $matricula);
+				Assert::assertEquals(6, strlen($matricula), 'La nueva matrucula no tiene 6 digitos para el AUTO');
+				
+		}
+		public function testRematricularMoto ():void{
+				$client = $this->Client();
+				$crawler = $client->request('GET', '/');
+				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
+				//elegir el auto id 3
+				$a = $crawler->filter('#rematricular_1');
+				/** @var \Facebook\WebDriver\Remote\RemoteWebElement $Remote */
+				$a->click();
+				$crawler = $client->waitFor('table#vehiculo_1');
+				$matricula  =  $crawler->filter('td#matricula')->text();
+				Assert::assertNotEquals('123A', $matricula);
+				Assert::assertEquals(4, strlen($matricula), 'La nueva matrucula no tiene 4 digitos para la MOTO');
 		}
 		
-		
+		public function testVenderAuto ():void{
+				$client = $this->Client();
+				$crawler = $client->request('GET', '/');
+				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
+				//elegir el auto id 3
+				$a = $crawler->filter('#vender_3');
+				$client->getWebDriver()->switchTo()->alert()->accept();
+				$crawler = $client->waitFor('h1#bienvenido');
+				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
+				// debe estar el 1 pero no el 3 porque fue vendido
+				$a = $crawler->filter('#ver_1');
+				Assert::assertEquals(1, $a->count(), 'El auto 1 sigue estando');
+				$a = $crawler->filter('#ver_3');
+				Assert::assertEquals(0, $a->count(), 'El auto 3 ya fue vendido y sigue estando');
+				
+		}
+		public function testVenderMoto ():void{
+				$client = $this->Client();
+				$crawler = $client->request('GET', '/');
+				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
+				//elegir el auto id 3
+				$a = $crawler->filter('a#vender_1');
+				$client->getWebDriver()->switchTo()->alert()->accept();
+				$crawler = $client->waitFor('h1#bienvenido');
+				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
+				// debe estar el 1 pero no el 3 porque fue vendido
+				$a = $crawler->filter('a#ver_3');
+				Assert::assertEquals(1, $a->count(), 'El vehiculo 1 sigue estando');
+				$a = $crawler->filter('a#ver_1');
+				Assert::assertEquals(0, $a->count(), 'El vehiculo 3 ya fue vendido y sigue estando');
+				
+		}
 		
 		
 		public function setUp ():void{
