@@ -15,7 +15,16 @@ class HexerApiService implements HexerApiInterface
 		
 		public function edit($id, $data)
 		{
-		
+				$url      = self::URL.'/'.$id.'/edit';
+				$response = $this->client->request('GET', $url, [
+					'json' => $data,
+				]);
+				if ($response->getStatusCode() === 200) {
+						$data = $response->toArray();
+						return $data;
+				} else {
+						return $this->error($response->getContent());
+				}
 		}
 		
 		public function findAll()
@@ -86,6 +95,18 @@ class HexerApiService implements HexerApiInterface
 				}
 		}
 		
+		public function rematricular($id)
+		{
+				$url      = self::URL.'/'.$id.'/rematricular';
+				$response = $this->client->request('GET', $url);
+				if ($response->getStatusCode() === 200) {
+						$data = $response->toArray();
+						return $data;
+				} else {
+						return $this->error($response->getContent());
+				}
+		}
+		
 		public function show($id)
 		{
 				$url      = self::URL.'/'.$id.'/ver';
@@ -99,23 +120,30 @@ class HexerApiService implements HexerApiInterface
 				}
 		}
 		
-		public function delete($id)
-		{
-				return;
-		}
-		
-		public function create($data)
-		{
-				return;
-		}
-		
-		public function rematricular($id)
-		{
-				return;
-		}
-		
 		public function vender($id)
 		{
-				return;
+				$url      = self::URL.'/'.$id.'/vender';
+				$response = $this->client->request('GET', $url);
+				if ($response->getStatusCode() === 200) {
+						$data = $response->toArray();
+						return $data;
+				} else {
+						return $this->error($response->getContent());
+				}
 		}
+		
+		/**
+		 * Se eejcuta cuando hay un error en la peticion
+		 *
+		 * @param $data
+		 * @return void
+		 */
+		private function error($data) :array
+		{
+				$respuesta              = [];
+				$respuesta['resultado'] = 'ERROR';
+				$respuesta['error']     = $data['error'];
+				return $respuesta;
+		}
+	
 }

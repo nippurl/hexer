@@ -1,8 +1,44 @@
 {% extends 'base.html.twig' %}
-
+{# @var \App\Entity\Vehiculo[] $vehiculos #}
 {% block title %}Bienvenido{% endblock %}
 
 {% block body %}
 <h1> {{ 'Bienvenido'|trans }}</h1>
+    <form action="#">
+        <input type="text" name="nombre" placeholder="Nombre">
+        <input type="search" name="Filtrar" placeholder="Placa">
+    </form>
+    <a href="">NUevo Automovil</a>
+
+    <a href="">Nueva Moto</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Color</th>
+            <th>Matricula</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+<tbody>
+    {% for vehiculo in vehiculos %}
+        <tr>
+            <td>{{ vehiculo['tipo'] }}</td>
+            <td>{{ vehiculo['marca'] }}</td>
+            <td>{{ vehiculo['modelo'] }}</td>
+            <td>{{ vehiculo['color'] }}</td>
+            <td>{{ vehiculo['matricula'] }}</td>
+            <td>
+                <a href="">Ver</a>
+                <a href="">Editar</a>
+                <a href="">Rematricular</a>
+                <a href="">Vender</a>
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>
+    </table>
 
 {% endblock %}
