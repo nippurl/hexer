@@ -184,7 +184,7 @@ class AppControllerTest extends PantherBase
 				// debe estar el 1 pero no el 3 porque fue vendido
 				$a = $crawler->filter('#ver_1');
 				Assert::assertEquals(1, $a->count(), 'El auto 1 sigue estando');
-				$client->takeScreenshot(__DIR__.'../imagens/error.png');
+	//			$client->takeScreenshot(__DIR__.'/../imagens/error.png');
 				$a = $crawler->filter('#ver_3');
 				Assert::assertEquals(0, $a->count(), 'El auto 3 ya fue vendido y sigue estando');
 				
