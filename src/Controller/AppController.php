@@ -105,8 +105,6 @@ class AppController extends AbstractController
 		public function vender($id, HexerApiInterface $hexerApiService)
 		{
 				$hexerApiService->vender($id);
-				return $this->redirectToRoute('app_ver', [
-					'id' => $id,
-				]);
+				return $this->redirectToRoute('app_index', []);
 		}
 }

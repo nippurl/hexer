@@ -7,6 +7,7 @@
     <a href="{{ path('app_nuevo', {  }) }}" class="new float-right">Nuevo Vehiculo</a>
 
     <form action="#">
+        <label for="q">Filtrar</label>
         <input type="search" name="q" placeholder="Buscar">
         <input type="submit" value="Filtrar" class="btn btn-success">
     </form>
@@ -39,7 +40,7 @@
                     <a href="{{ path('app_rematricular', { 'id': vehiculo['id'] }) }}" class="btn btn-secondary"
                        id="rematricular_{{ vehiculo['id'] }}">Rematricular</a>
                     <a href="{{ path('app_vender', { 'id': vehiculo['id'] }) }}" id="vender_{{ vehiculo['id'] }}"
-                    class="btn btn-danger" onclick="return confirm('¿Desea vender este vehiculo?');">Vender</a>
+                    class="btn btn-danger" {#  onclick="return confirm('¿Desea vender este vehiculo?');"#}>Vender</a>
                 </td>
             </tr>
         {% endfor %}

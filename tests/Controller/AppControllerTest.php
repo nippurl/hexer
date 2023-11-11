@@ -12,7 +12,7 @@ class AppControllerTest extends PantherBase
     {
         $client = $this->Client();
         $crawler = $client->request('GET', '/');
-				Assert::assertTrue($crawler->filter('h1')->count() > 0);
+				Assert::assertTrue($crawler->filter('h1#bienvenido')->count() > 0);
 			//	$this->echo($crawler->filter('td')->text());
        // $this->assertSelectorTextContains('h1', 'Bienvenido');
 		    Assert::assertEquals('Moto', $crawler->filter('td')->text());
@@ -174,13 +174,17 @@ class AppControllerTest extends PantherBase
 				$crawler = $client->request('GET', '/');
 				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
 				//elegir el auto id 3
-				$a = $crawler->filter('#vender_3');
-				$client->getWebDriver()->switchTo()->alert()->accept();
+				$a = $crawler->filter('a#vender_3');
+				$a->click();
+				//$client->getWebDriver()->switchTo()->defaultContent()->sendKeys('ENTER');
+				//$client->getWebDriver()->switchTo()->alert()->accept();
+		//		$client->getWebDriver()->switchTo()->defaultContent()->ok();
 				$crawler = $client->waitFor('h1#bienvenido');
 				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
 				// debe estar el 1 pero no el 3 porque fue vendido
 				$a = $crawler->filter('#ver_1');
 				Assert::assertEquals(1, $a->count(), 'El auto 1 sigue estando');
+				$client->takeScreenshot(__DIR__.'../imagens/error.png');
 				$a = $crawler->filter('#ver_3');
 				Assert::assertEquals(0, $a->count(), 'El auto 3 ya fue vendido y sigue estando');
 				
@@ -191,7 +195,8 @@ class AppControllerTest extends PantherBase
 				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
 				//elegir el auto id 3
 				$a = $crawler->filter('a#vender_1');
-				$client->getWebDriver()->switchTo()->alert()->accept();
+				$a->click();
+				//$client->getWebDriver()->switchTo()->alert()->accept();
 				$crawler = $client->waitFor('h1#bienvenido');
 				Assert::assertEquals('Bienvenido', $crawler->filter('h1')->text());
 				// debe estar el 1 pero no el 3 porque fue vendido

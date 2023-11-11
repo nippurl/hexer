@@ -29,7 +29,7 @@
                 <a href="{{ path('app_rematricular', { 'id': vehiculo['id'] }) }}" class="btn btn-secondary"
                    id="rematricular_{{ vehiculo['id'] }}">Rematricular</a>
                 <a href="{{ path('app_vender', { 'id': vehiculo['id'] }) }}" id="vender_{{ vehiculo['id'] }}"
-                   class="btn btn-danger" onclick="return confirm('¿Desea vender este vehiculo?');">Vender</a>
+                   class="btn btn-danger" {#  onclick="return confirm('¿Desea vender este vehiculo?');"#}>Vender</a>
                 <a href="{{ path('app_index', {  }) }}" class="exit">Volver</a>
             </td>
         </tr>

@@ -3,7 +3,6 @@
 namespace App\Tests;
 
 use Facebook\WebDriver\WebDriverBy;
-use Hautelook\AliceBundle\PhpUnit\RecreateDatabaseTrait;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\Panther\Client;
 use Symfony\Component\Panther\DomCrawler\Crawler;
