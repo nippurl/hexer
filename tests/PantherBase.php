@@ -23,7 +23,7 @@ abstract class PantherBase extends PantherTestCase
     {
         parent::setUp();
         $this->takeScreenshotIfTestFailed();
-        self::Client();
+        $this->Client();
         $this->cleanDB();
         $this->cleanCache();
     }

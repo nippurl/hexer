@@ -169,7 +169,7 @@ class HexerApiService implements HexerApiInterface
         if ($response->getStatusCode() === 200) {
             return $response->toArray();
         }
-        return $this->error($response->getContent());
+        return $this->error($response->toArray());
     }
     
     /**
@@ -208,7 +208,7 @@ class HexerApiService implements HexerApiInterface
         if ($response->getStatusCode() === 200) {
             return $response->toArray();
         }
-        return $this->error($response->getContent());
+        return $this->error($response->toArray());
     }
     
     /**
@@ -220,7 +220,7 @@ class HexerApiService implements HexerApiInterface
     private
     function error(
       array $data,
-      ?Exception $exception =null
+      ?\Exception $exception =null
     ): array {
         $respuesta              = [];
         $respuesta['resultado'] = 'ERROR';
@@ -256,6 +256,6 @@ class HexerApiService implements HexerApiInterface
         if ($response->getStatusCode() === 200) {
             return $response->toArray();
         }
-        return $this->error($response->getContent());
+        return $this->error($response->toArray());
     }
 }

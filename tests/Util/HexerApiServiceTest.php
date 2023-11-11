@@ -5,7 +5,6 @@ namespace App\Tests\Util;
 use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 use App\Util\HexerApiInterface;
 use App\Util\HexerApiService;
-use Hautelook\AliceBundle\PhpUnit\ReloadDatabaseTrait;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class HexerApiServiceTest extends ApiTestCase
