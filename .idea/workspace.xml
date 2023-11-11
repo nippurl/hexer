@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b87d9adf-33aa-411a-af90-58da7404b083" name="Changes" comment="feat[TODO OK]: TODO OK">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/app/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/PantherBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PantherBase.php" afterDir="false" />
     </list>
@@ -232,7 +233,7 @@
       <workItem from="1699631887914" duration="14155000" />
       <workItem from="1699652616024" duration="1351000" />
       <workItem from="1699654277489" duration="699000" />
-      <workItem from="1699655536549" duration="8308000" />
+      <workItem from="1699655536549" duration="8903000" />
     </task>
     <task id="LOCAL-00001" summary="feat[controller]: controller&#10;&#10;[respaldo]">
       <option name="closed" value="true" />
