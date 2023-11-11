@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b87d9adf-33aa-411a-af90-58da7404b083" name="Changes" comment="feat[TODO OK]: TODO OK">
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/app/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/app/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/VehiculoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VehiculoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Util/HexerApiInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/HexerApiInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Util/HexerApiService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/HexerApiService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/PantherBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PantherBase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Util/HexerApiServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Util/HexerApiServiceTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +38,16 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
+  <component name="HttpClientSelectedEnvironments">
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="fdf63b7f-fbb6-40c7-afb0-e59858c44fe9" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
@@ -167,6 +183,9 @@
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -184,11 +203,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "HTTP Request.All in rest-api_4.executor": "Run",
+    "HTTP Request.rest-api_4 | #1.executor": "Run",
     "PHPUnit.AppControllerTest.executor": "Run",
     "PHPUnit.AppControllerTest.testEdir.executor": "Run",
     "PHPUnit.AppControllerTest.testEdit.executor": "Run",
     "PHPUnit.AppControllerTest.testNuevoAuto.executor": "Run",
-    "PHPUnit.Main.executor": "Run",
+    "PHPUnit.Main.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "deletionFromPopupRequiresConfirmation": "false",
@@ -199,15 +220,40 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.sourceCode.PHP",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/tmp/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="f3fbb555-6748-4a18-9e3a-b1bcf1335e88" />
+        <option name="reportName" value="hexer/qodana/2023-11-11" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/tmp/qodana_output/qodana.sarif.json" reportGuid="f3fbb555-6748-4a18-9e3a-b1bcf1335e88" reportId="hexer/qodana/2023-11-11" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.Main">
+    <configuration name="All in rest-api_4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_4.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_4 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_4.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -220,6 +266,21 @@
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
+    <configuration name="localhost" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="localhost" start_url="/hexer/public/index.php">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.All in rest-api_4" />
+      <item itemvalue="HTTP Request.rest-api_4 | #1" />
+      <item itemvalue="PHP Web Page.localhost" />
+      <item itemvalue="PHPUnit.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.All in rest-api_4" />
+        <item itemvalue="HTTP Request.rest-api_4 | #1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -234,6 +295,9 @@
       <workItem from="1699652616024" duration="1351000" />
       <workItem from="1699654277489" duration="699000" />
       <workItem from="1699655536549" duration="8903000" />
+      <workItem from="1699708012687" duration="5029000" />
+      <workItem from="1699725035172" duration="929000" />
+      <workItem from="1699726040053" duration="506000" />
     </task>
     <task id="LOCAL-00001" summary="feat[controller]: controller&#10;&#10;[respaldo]">
       <option name="closed" value="true" />
@@ -289,8 +353,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Util/HexerApiService.php</url>
-          <line>136</line>
+          <line>205</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Util/HexerApiServiceTest.php</url>
+          <line>48</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

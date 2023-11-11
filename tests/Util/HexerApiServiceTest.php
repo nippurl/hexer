@@ -44,17 +44,20 @@ class HexerApiServiceTest extends ApiTestCase
 					'marca'     => 'Renault',
 					'modelo'    => '12',
 					'color'     => 'gris',
-					'matricula' => 'VI1986',
+					'matricula' => 'VI2086',
 				];
 				$respuesta = $this->hexerApiService->newAuto($vehiculo);
 				$this->assertIsArray($respuesta);
 				$resultado = $respuesta['resultado'];
+        if ('ok' !== $resultado) {
+            \var_dump($respuesta);
+        }
 				$this->assertEquals('ok', $resultado);
 				$vehiculo = $respuesta['vehiculo'];
 				$this->assertEquals('Renault', $vehiculo['marca']);
 				$this->assertEquals('12', $vehiculo['modelo']);
 				$this->assertEquals('gris', $vehiculo['color']);
-				$this->assertEquals('VI1986', $vehiculo['matricula']);
+				$this->assertEquals('VI2086', $vehiculo['matricula']);
 				$this->assertEquals(null, $vehiculo['venta']);
 		}
 		
@@ -68,6 +71,9 @@ class HexerApiServiceTest extends ApiTestCase
 				];
 				$respuesta = $this->hexerApiService->newMoto($vehiculo);
 				$resultado = $respuesta['resultado'];
+        if ('ok' !== $resultado) {
+            \var_dump($respuesta);
+        }
 				$this->assertEquals('ok', $resultado);
 				$vehiculo = $respuesta['vehiculo'];
 				$this->assertEquals('Kawasaki', $vehiculo['marca']);

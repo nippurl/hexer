@@ -48,23 +48,28 @@ class VehiculoType extends AbstractType
 						// Configure your form options here
 				]);
 		}
-		
-		/**
-		 * Valida en cada caso la matricula utilizado la funcion de validacion
-		 * @return void
-		 */
+    
+    /**
+     * Valida en cada caso la matricula utilizado la funcion de validacion
+     * @param \Symfony\Component\Form\FormEvent $event
+     * @return void
+     * @throws \Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface
+     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     */
 		public function validarMatricula(FormEvent $event): void
 		{
-				/** @var Vehiculo $data */
+				/** @var array $data */
 				$data = $event->getData();
-				/** @var \App\Form\MovimientoType $form */
 				$form = $event->getForm();
 				$hexerApiService = $this->hexerApiService;
 				$resultado = $hexerApiService->verificar($data);
-				if ($resultado['resultado'] != 'ok') {
+				if ($resultado['resultado'] !== 'ok') {
 						$form->get('matricula')
 						     ->addError(new FormError($resultado['error']));
 				}
-				return;
+				
 		}
 }
