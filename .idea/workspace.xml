@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b87d9adf-33aa-411a-af90-58da7404b083" name="Changes" comment="feat[TODO OK]: TODO OK">
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/VehiculoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VehiculoType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Util/HexerApiInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/HexerApiInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Util/HexerApiService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/HexerApiService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/PantherBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PantherBase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Util/HexerApiServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Util/HexerApiServiceTest.php" afterDir="false" />
-    </list>
+    <list default="true" id="b87d9adf-33aa-411a-af90-58da7404b083" name="Changes" comment="feat[TODO OK]: TODO OK&#10;&#10;[correciones menores y refactorizacion]" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +198,7 @@
     "PHPUnit.AppControllerTest.testEdir.executor": "Run",
     "PHPUnit.AppControllerTest.testEdit.executor": "Run",
     "PHPUnit.AppControllerTest.testNuevoAuto.executor": "Run",
-    "PHPUnit.Main.executor": "Debug",
+    "PHPUnit.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "deletionFromPopupRequiresConfirmation": "false",
@@ -297,7 +286,7 @@
       <workItem from="1699655536549" duration="8903000" />
       <workItem from="1699708012687" duration="5029000" />
       <workItem from="1699725035172" duration="929000" />
-      <workItem from="1699726040053" duration="506000" />
+      <workItem from="1699726040053" duration="950000" />
     </task>
     <task id="LOCAL-00001" summary="feat[controller]: controller&#10;&#10;[respaldo]">
       <option name="closed" value="true" />
@@ -331,7 +320,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699663725625</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat[TODO OK]: TODO OK&#10;&#10;[correciones menores y refactorizacion]">
+      <option name="closed" value="true" />
+      <created>1699726725009</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699726725009</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat[TODO OK]: TODO OK&#10;&#10;[correciones menores y refactorizacion]">
+      <option name="closed" value="true" />
+      <created>1699726963225</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699726963225</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +346,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat[controller]: controller&#10;&#10;[respaldo]" />
     <MESSAGE value="feat[TODO OK]: TODO OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat[TODO OK]: TODO OK" />
+    <MESSAGE value="feat[TODO OK]: TODO OK&#10;Correcciones menores y refactorización" />
+    <MESSAGE value="feat[TODO OK]: TODO OK&#10;&#10;[correciones menores y refactorizacion]" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat[TODO OK]: TODO OK&#10;&#10;[correciones menores y refactorizacion]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -358,7 +365,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/tests/Util/HexerApiServiceTest.php</url>
-          <line>48</line>
+          <line>47</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
